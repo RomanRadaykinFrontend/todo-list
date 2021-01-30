@@ -15,7 +15,7 @@ export type TaskType = {
 
 export type FilterValueType = 'all' | 'active' | 'completed'
 
-type TodoListType = {
+export type TodoListType = {
     id: string
     title: string
     filter: FilterValueType
@@ -122,7 +122,7 @@ function App() {
         })
     }
 
-    function changeTodoListTitle(title: string, todoListID: string) {
+    function changeTodoListTitle(title: string, todoListID: string)     {
         const todoList = todoLists.find(item => item.id === todoListID)
         if (todoList) {
             todoList.title = title
