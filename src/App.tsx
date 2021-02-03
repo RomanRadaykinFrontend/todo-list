@@ -6,22 +6,19 @@ import AddItemForm from "./AddItemForm";
 import {AppBar, Toolbar, IconButton, Typography, Button, Container, Grid, Paper} from '@material-ui/core';
 import {Menu} from "@material-ui/icons";
 
-
+//Типы
 export type TaskType = {
     id: string,
     title: string,
     isDone: boolean
 }
-
 export type FilterValueType = 'all' | 'active' | 'completed'
-
 export type TodoListType = {
     id: string
     title: string
     filter: FilterValueType
 }
-
-type TaskStateType = {
+export type TaskStateType = {
     [key: string]: Array<TaskType>
 }
 
