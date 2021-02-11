@@ -28,7 +28,9 @@ export type ChangeTodoListFilterActionType = {
 export type ActionType = RemoveTodoListActionType | AddTodoListActionType
     | ChangeTodoListTitleActionType | ChangeTodoListFilterActionType
 
-export function todoListReducer(state: Array<TodoListType>, action: ActionType) {
+let initialState: Array<TodoListType> = [];
+
+export function todoListReducer(state = initialState, action: ActionType) {
     switch (action.type) {
         case 'REMOVE_TODO_LIST':
             return state.filter(item => item.id !== action.id);
@@ -38,26 +40,28 @@ export function todoListReducer(state: Array<TodoListType>, action: ActionType) 
                 title: action.title,
                 filter: 'all'
             };
-            return [...state, newTodoList]
+            return [...state, newTodoList];
         case 'CHANGE_TODO_LIST_TITLE': {
-            const todoLists = state.map(item => {
+            const todoList1 = state.map(item => {
                 if (item.id === action.id) {
                     return {...item, title: action.title}
                 } else {
                     return item
                 }
             });
-            return todoLists
+            return todoList1
         }
         case 'CHANGE_TODO_LIST_FILTER': {
-            const todoLists = state.map(item => {
+            debugger
+            const todoList2 = state.map(item => {
+
                 if (item.id === action.id) {
                     return {...item, filter: action.filter}
                 } else {
                     return item
                 }
             });
-            return todoLists
+            return todoList2
         }
         default:
             return state

@@ -1,7 +1,6 @@
 import {FilterValueType, TodoListType, TaskStateType, TaskType} from "../App";
 import {v1} from "uuid";
 import {AddTodoListActionType, RemoveTodoListActionType} from "./todoListReducer";
-import {Simulate} from "react-dom/test-utils";
 
 
 
@@ -31,13 +30,13 @@ type ChangeTaskTitleActionType = {
     todoListID: string
 }
 
-
-
 type ActionType = RemoveTaskActionType | AddTaskActionType
     | ChangeTaskStatusActionType | ChangeTaskTitleActionType
     | AddTodoListActionType | RemoveTodoListActionType
 
-export function tasksReducer(state: TaskStateType, action: ActionType) {
+let initialState: TaskStateType = {};
+
+export function tasksReducer(state = initialState, action: ActionType) {
     switch (action.type) {
         case 'REMOVE_TASK':
             let copyState = {...state}
