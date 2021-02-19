@@ -2,7 +2,7 @@ import React, {useReducer, useState} from 'react';
 import './App.css';
 import TodoList from "./TodoList";
 import {v1} from "uuid";
-import AddItemForm from "./AddItemForm";
+
 import {AppBar, Toolbar, IconButton, Typography, Button, Container, Grid, Paper} from '@material-ui/core';
 import {Menu} from "@material-ui/icons";
 import {
@@ -13,6 +13,7 @@ import {
     todoListReducer
 } from './state/todoListReducer';
 import {addTaskAC, changeTaskStatusAC, removeTaskAC, tasksReducer, changeTaskTitleAC} from "./state/tasksReducer";
+import { AddItemForm } from './AddItemForm';
 
 
 //Типы

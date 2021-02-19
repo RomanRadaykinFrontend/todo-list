@@ -52,7 +52,6 @@ export function todoListReducer(state = initialState, action: ActionType) {
             return todoList1
         }
         case 'CHANGE_TODO_LIST_FILTER': {
-            debugger
             const todoList2 = state.map(item => {
 
                 if (item.id === action.id) {
